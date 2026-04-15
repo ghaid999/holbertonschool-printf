@@ -1,11 +1,6 @@
 #include "main.h"
 
-/**
- * print_char - prints a character
- * @args: argument list
- *
- * Return: 1
- */
+/* print char */
 int print_char(va_list args)
 {
 	char c;
@@ -14,13 +9,8 @@ int print_char(va_list args)
 	write(1, &c, 1);
 	return (1);
 }
+/* print string */
 
-/**
- * print_string - prints a string
- * @args: argument list
- *
- * Return: number of characters printed
- */
 int print_string(va_list args)
 {
 	char *str;
