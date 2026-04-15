@@ -1,42 +1,38 @@
 #include "main.h"
 
-/* prints text */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i;
-	int count;
+	int i = 0, count = 0;
 
 	if (format == NULL)
 		return (-1);
 
 	va_start(args, format);
-	i = 0;
-	count = 0;
 
-	while (format[i] != '\0')
+	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == 'c')
+		if (format[i] == '%' && format[i + 1])
 		{
-			count += print_char(args);
 			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] == 's')
-		{
-			count += print_string(args);
-			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			write(1, "%", 1);
-			count++;
-			i++;
-		}
-		else if (format[i] == '%' && format[i + 1] == '\0')
-		{
-			va_end(args);
-			return (-1);
+
+			if (format[i] == 'c')
+				count += print_char(args);
+			else if (format[i] == 's')
+				count += print_string(args);
+			else if (format[i] == 'd' || format[i] == 'i')
+				count += print_int(args);
+			else if (format[i] == '%')
+			{
+				write(1, "%", 1);
+				count++;
+			}
+			else
+			{
+				write(1, "%", 1);
+				write(1, &format[i], 1);
+				count += 2;
+			}
 		}
 		else
 		{
