@@ -1,11 +1,7 @@
 #include "main.h"
 
-/**
- * _printf - prints formatted output
- * @format: format string
- *
- * Return: number of characters printed
- */
+/* prints text */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
