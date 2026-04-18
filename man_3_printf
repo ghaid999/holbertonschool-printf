@@ -1,0 +1,43 @@
+.TH _printf 3 "April 2026" "1.0" "holbertonschool-printf"
+
+.SH NAME
+_printf - prints output based on a specific format
+
+.SH SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+The _printf function prints output depending on the format string.
+
+The format string can contain normal text and special formats that start
+with the % character. After %, there is a specifier like %s, %c, %%, %d, or %i.
+
+The supported specifiers are:
+
+.TP
+.B %c
+Prints a single character.
+
+.TP
+.B %s
+Prints a string.
+
+.TP
+.B %%
+Prints the % character.
+
+.TP
+.B %d
+Prints an integer number.
+
+.TP
+.B %i
+Prints an integer (same as %d).
+
+.SH RETURN VALUE
+The function returns the total number of characters printed,
+not including the null byte.
+
+If something goes wrong, it returns a negative value.
