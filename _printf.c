@@ -2,14 +2,14 @@
 
 int _printf(const char *format, ...)
 {
-	va_list args;#store
+va_list args; /* store */
 	int i = 0,
 	count = 0;
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(args, format);#start reading
+	va_start(args, format); /* start reading */
 
 	while (format[i])
 	{
