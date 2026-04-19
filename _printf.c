@@ -2,14 +2,13 @@
 
 int _printf(const char *format, ...)
 {
-va_list args; /* store */
-	int i = 0,
-	count = 0;
+	va_list args;
+	int i = 0, count = 0;
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(args, format); /* start reading */
+	va_start(args, format);
 
 	while (format[i])
 	{
@@ -23,6 +22,8 @@ va_list args; /* store */
 				count += print_string(args);
 			else if (format[i] == 'd' || format[i] == 'i')
 				count += print_int(args);
+			else if (format[i] == 'b')
+				count += print_binary(args);
 			else if (format[i] == '%')
 			{
 				write(1, "%", 1);
