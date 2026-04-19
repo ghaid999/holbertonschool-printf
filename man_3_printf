@@ -40,4 +40,8 @@ Prints an integer (same as %d).
 The function returns the total number of characters printed,
 not including the null byte.
 
-If something goes wrong, it returns a negative value.
+If format is NULL, the function returns -1.
+
+.SH AUTHORS
+Shomukh
+Ghaid
